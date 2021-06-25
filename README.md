@@ -1,2 +1,2 @@
-# react
+# React
 Изучения React JS 
