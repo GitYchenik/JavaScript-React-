@@ -1,5 +1,5 @@
 const NumbersOfFilms= prompt('Сколько фильмов вы уже смотрели ? ', '');
-
+alert('это алерт');
 const PersonalMovieDB = {
     Count:NumbersOfFilms,
     Movies: {},
