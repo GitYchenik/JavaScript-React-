@@ -41,4 +41,4 @@ logger();
 //Стрелочные функции
 
 const calc = (a, b) => {return (a + b)};// а можно просто const calc = (a, b) => a+b;
-
+  
