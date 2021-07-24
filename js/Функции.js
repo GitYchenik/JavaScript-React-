@@ -1,43 +1,46 @@
+//изучение функций
 "use strict";
-//изучение функции
-let num = 20;
-//Первый тип функции Function Declaration
-//стандартное применение функции которая выводит текст в переменную
-function ShowFirstMessage(text)
+
+let num = 20;           //создание переменной и присвоение значения 20
+
+//Первый тип функции Function Declaration которые действуют во всем коде (даже до тела функции)
+
+function ShowFirstMessage(text)             //объявляем функцию указываем переменую текс (которая бслу)
 {
-    console.log(text);
-    let num = 10;
+    console.log(text);                      //вывести на экран переменую text
+    let num = 10;                           //присвоить переменной значение 
 }
-ShowFirstMessage("Hello World!");
-console.log(num);
+ShowFirstMessage("Hello World!");           //передать функции текст - hello world
+console.log(num);                           //вывести на экран переменую num
 //проверяем операции внутри функции при передаче аргументов
 console.log(calc(41, 65));
 //Самое интересное это Declaration эти функции можно получить результат до начала самой фукнкции, т.е. мы выводим результат функции которая еще не запускалась
-function calc(a, b)
+function calc(a, b)                         //объявление новой функции с аргементом
 {
-    return (a+b);
+    return (a+b);                           //вернуть результат сложения аргументов которые введены на строке 16
 }
 
-console.log(calc(4, 6));
+console.log(calc(4, 6));                    //выводим результат операции фуккции
 
-function ret()
+function ret()                              //объявляем функцию ret
 {
-    let num = 50;
+    let num = 50;                           //присваеваем в переменную значение
 
     //
 
-    return num;
+    return num;                             //возвращаем значение переменной
 }
 
-const anotherNum = ret();
-console.log(anotherNum);
+const anotherNum = ret();                   //присваеваем результат который вернула функция ret
+console.log(anotherNum);                    //выводим результат переменной
+
 //function expression функции которые работают после объявления
-const logger = function() 
+const logger = function()                   //объявление функции
 {
-    console.log("Hello");
+    console.log("Hello");                   //вывести на экран текс
 }
 
-logger();
+logger();                                   //вернуть результат функции
 //Стрелочные функции
 
 const calc = (a, b) => {return (a + b)};// а можно просто const calc = (a, b) => a+b;
