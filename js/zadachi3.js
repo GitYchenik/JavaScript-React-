@@ -80,7 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {           //что бы в
                 movieDB.movies.splice(i, 1);            //удалить элемент из базы фильмов
 
                 createMovieList(movieDB.movies, movielist);
-            });
+            }); 
         });
         });
     }
