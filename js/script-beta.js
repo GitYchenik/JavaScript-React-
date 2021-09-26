@@ -13,7 +13,13 @@ defer будет означать подготовку скрипта (загр�
 /*----------Async
 обратная структора defer она независима от других сриптов и обязана запускаться сразу
 К примеру метрика. Если требуется зафиксировать сколько пользователей зашло на сайт и не важно что они делали*/
+for (let i=0; i < 1000;i++) {
+    console.log('gst');
+}
 
-const script = document.createElement('script-beta');
-script.scr = "js/test-beta.js";
-document.append(script);
+function loadscript(src) {
+    const script = document.createElement('script-beta');
+    script.scr = "js/test-beta.js";
+    script.async = false;
+    document.body.append(script);
+}
