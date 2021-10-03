@@ -1,25 +1,27 @@
-"use strict";
+//Изучаем ClassList
+const btns = document.querySelectorAll('button');       //в переменую btns = документ.ЗапросВыбратьВсе('button')
 
-const p = document.querySelectorAll('p');
-console.log(p);
+console.log(btns[0].classList.length);              //показать длину показателей--итог 2 (button class="blue some" соответвенно blue и some)
+console.log(btns[0].classList.item(0));             //показать элемент --итог (button class="blue some" соответвенно blue)
+console.log(btns[0].classList.add('red'));          //добавить в (button class="blue some" значение red получим (button class="blue some red")
+console.log(btns[0].classList.add('red', 'classss'));          //добавить значение red и classsss
+console.log(btns[0].classList.remove('blue'));      //удалить елемент blue -- (button class="blue some red" получим button class="blue some"
+console.log(btns[0].classList.toggle('blue'));      //если есть blue то удалить его, если нет blue то добавит его
 
-/*---------Defer
-Для работы необходимо в html файл в строке который запускает скрипт добавить к примеру 
-<script defer src="js/script-beta.js"></script>
-defer будет означать подготовку скрипта (загружает его в фоном режиме)
-это требуется что бы больщой скрипт загрузился полностью и дальше страница не побежала.
-К примеру если на этапе логина и пароля произошло зависание что бы программа не начинала показывать приветствие.*/
-
-/*----------Async
-обратная структора defer она независима от других сриптов и обязана запускаться сразу
-К примеру метрика. Если требуется зафиксировать сколько пользователей зашло на сайт и не важно что они делали*/
-for (let i=0; i < 1000;i++) {
-    console.log('gst');
+if (btns[0].classList.contains('red')) {            //если в списке классов.содержит('red') выполни ниже 
+    console.log('red');                             //вывести на экран red
 }
 
-function loadscript(src) {
-    const script = document.createElement('script-beta');
-    script.scr = "js/test-beta.js";
-    script.async = false;
-    document.body.append(script);
-}
+btns[0].addEventListener('click', ()=>{
+    if (!btns[1].classList.contains('red')) {            //если в списке классов.содержит('red') выполни ниже 
+        btns[1].classList.add('red');                             //вывести на экран red
+    } else {                                                    //иначе выполни
+        btns[1].classList.remove('red');                    //удили red
+    }
+})
+//Второй способ решения с таким результатом
+/*btns[0].addEventListener('click', ()=>{
+    btns[1].classList.toggle('red');
+})*/
+
+console.log(btns[0].className);                 //старый способ получим - blue some как и выше, но ответ одной стракой что неудобно 
