@@ -1,5 +1,6 @@
 //Изучаем ClassList
-const btns = document.querySelectorAll('button');       //в переменую btns = документ.ЗапросВыбратьВсе('button')
+const btns = document.querySelectorAll('button'),       //в переменую btns = документ.ЗапросВыбратьВсе('button')
+const wraper = document.querySelectorAll('.btn-block');
 
 console.log(btns[0].classList.length);              //показать длину показателей--итог 2 (button class="blue some" соответвенно blue и some)
 console.log(btns[0].classList.item(0));             //показать элемент --итог (button class="blue some" соответвенно blue)
@@ -25,3 +26,9 @@ btns[0].addEventListener('click', ()=>{
 })*/
 
 console.log(btns[0].className);                 //старый способ получим - blue some как и выше, но ответ одной стракой что неудобно 
+
+wrapper.addEventListener('clik', (event) => {
+    if (event.target && event.target.classList.contains('blue')){
+        console.log('Hello');
+    }
+})
